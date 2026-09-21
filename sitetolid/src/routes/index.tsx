@@ -116,7 +116,7 @@ function ServiceShowcase() {
         />
       </PageShell>
 
-      <div ref={ref} className="relative mt-16">
+      {/* <div ref={ref} className="relative mt-16">
         <PageShell>
           <div className="grid gap-10 lg:grid-cols-[1fr_1.05fr]">
             <div className="hidden lg:block">
@@ -141,11 +141,11 @@ function ServiceShowcase() {
                   <p className="text-xs tracking-[0.22em] text-muted-foreground">
                     {String(active).padStart(2, "۰")}
                   </p>
-                  {/* <p className="mt-3 text-2xl font-extrabold">{services[active]?.title}</p>
-                  <p className="mt-2 text-sm text-muted-foreground">{services[active]?.tagline}</p> */}
+                   { <p className="mt-3 text-2xl font-extrabold">{services[active]?.title}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{services[active]?.tagline}</p> } 
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <ul className="space-y-4">
               {services.map((s, i) => (
@@ -158,7 +158,7 @@ function ServiceShowcase() {
                     <div className="flex items-start justify-between gap-6">
                       <div>
                         <span className="text-xs tracking-[0.22em] text-muted-foreground">
-                          {/* /* {String(i).padStart(2, "۰")} */ */}
+                          { {String(i).padStart(2, "۰")} }
                         </span>
                         <h3 className="mt-3 text-xl font-extrabold">{s.title}</h3>
                         <p className="mt-3 max-w-md text-sm leading-8 text-muted-foreground">
