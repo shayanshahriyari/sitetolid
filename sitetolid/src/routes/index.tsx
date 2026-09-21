@@ -25,6 +25,7 @@ export const Route = createFileRoute("/")({
         content: "طراحی و رشد برندهای دیجیتال با کیفیت و تمرکز بر فروش.",
       },
     ],
+    <meta name="google-site-verification" content="z9vxyEGqLpaWPBmQOzZ2LPAS8RRBslQpl-GM40Uqu5o" />
   }),
   component: Home,
 });
