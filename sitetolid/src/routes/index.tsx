@@ -146,7 +146,7 @@ function ServiceShowcase() {
                 </div>
               </div>
             </div> */}
-
+{/* 
             <ul className="space-y-4">
               {services.map((s, i) => (
                 <Reveal as="li" key={s.slug} delay={i * 60}>
@@ -173,7 +173,7 @@ function ServiceShowcase() {
                 </Reveal>
               ))}
             </ul>
-          </div>
+          </div> */}
         </PageShell>
       </div>
     </section>
