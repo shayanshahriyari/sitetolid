@@ -131,7 +131,7 @@ function ServiceShowcase() {
                     height={900}
                     className="absolute inset-0 h-full w-full object-cover transition-all duration-1000 [transition-timing-function:var(--ease-cinema)]"
                     style={{
-                      // opacity: i === active ? 1 : 0,
+                      opacity: i === active ? 1 : 0,
                       transform: i === active ? "scale(1)" : "scale(1.1)",
                     }}
                   />
@@ -141,8 +141,8 @@ function ServiceShowcase() {
                   <p className="text-xs tracking-[0.22em] text-muted-foreground">
                     {String(active).padStart(2, "۰")}
                   </p>
-                  <p className="mt-3 text-2xl font-extrabold">{services[active]?.title}</p>
-                  <p className="mt-2 text-sm text-muted-foreground">{services[active]?.tagline}</p>
+                  {/* <p className="mt-3 text-2xl font-extrabold">{services[active]?.title}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{services[active]?.tagline}</p> */}
                 </div>
               </div>
             </div>
