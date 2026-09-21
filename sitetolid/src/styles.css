@@ -1,9 +1,6 @@
-@import "tailwindcss" source(none);
-@source "../src";
+@import "tailwindcss";
 @import "tw-animate-css";
-
-@custom-variant dark (&:is(.dark *));
-
+@source "../src";
 /*
  * ARIVAN — Persian luxury digital agency design system.
  * Brand: green #5EF37A / #7FF9A0, purple #AE7FDD / #7544A7, turquoise #3ED0DA.
