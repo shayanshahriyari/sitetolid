@@ -139,7 +139,7 @@ function ServiceShowcase() {
                 <div className="absolute inset-0 bg-[linear-gradient(to_top,color-mix(in_oklab,var(--background)_88%,transparent),transparent_58%)]" />
                 <div className="absolute inset-x-0 bottom-0 p-8">
                   <p className="text-xs tracking-[0.22em] text-muted-foreground">
-                    {String(active + 1).padStart(2, "۰")} / ۰۶
+                    {String(active).padStart(2, "۰")}
                   </p>
                   <p className="mt-3 text-2xl font-extrabold">{services[active]?.title}</p>
                   <p className="mt-2 text-sm text-muted-foreground">{services[active]?.tagline}</p>
