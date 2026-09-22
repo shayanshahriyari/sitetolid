@@ -2,7 +2,7 @@ export function Logo({ className }: { className?: string }) {
   return (
     <span className={`inline-flex items-center gap-2.5 ${className ?? ""}`}>
 <img
-  src="/assets/logo.png"
+  src="/src/assets/logo.png"
   alt="Logo"
   width={66}
   height={34}
