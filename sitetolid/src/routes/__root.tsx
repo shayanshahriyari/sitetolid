@@ -47,7 +47,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          این صفحه بارگذاری نشد
+        این صفحه رو پیدا نکردم
         </h1>
         <p className="mt-3 text-sm leading-8 text-muted-foreground">
           مشکلی پیش آمد. می‌توانید دوباره تلاش کنید یا به صفحه اصلی برگردید.
@@ -79,11 +79,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "سایت تولید | آژانس دیجیتال لوکس" },
+      { title: "سایت تولید | طراحی سایت، سئو و دیجیتال مارکتینگ" },
       {
         name: "description",
         content:
-          "سایت تولید؛ طراحی سایت، سئو، رابط کاربری، مارکتینگ دیجیتال، بنر و لوگو با کیفیت.",
+          "سایت تولید؛ طراحی سایت، سئو، بهینه‌سازی و دیجیتال مارکتینگ برای ساخت و رشد کسب‌وکار در فضای آنلاین. از ایده تا اجرا و رشد همراه شما هستیم.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
