@@ -167,7 +167,7 @@ function ServiceShowcase() {
                     <div className="flex items-start justify-between gap-6">
                       <div>
                         { <span className="text-xs tracking-[0.22em] text-muted-foreground">
-                          { {String(i).padStart(2, "۰")} }
+                          {String(i).padStart(2, "۰")}
                         </span> }
                         <h3 className="mt-3 text-xl font-extrabold">{s.title}</h3>
                         <p className="mt-3 max-w-md text-sm leading-8 text-muted-foreground">
@@ -182,7 +182,7 @@ function ServiceShowcase() {
                 </Reveal>
               ))}
             </ul>
-          </div> }
+          </div> 
         </PageShell>
       </div>
     </section>
