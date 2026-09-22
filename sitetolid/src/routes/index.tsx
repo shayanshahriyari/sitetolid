@@ -143,9 +143,9 @@ function ServiceShowcase() {
                 ))}
                 <div className="absolute inset-0 bg-[linear-gradient(to_top,color-mix(in_oklab,var(--background)_88%,transparent),transparent_58%)]" />
                 <div className="absolute inset-x-0 bottom-0 p-8">
-                  { <p className="text-xs tracking-[0.22em] text-muted-foreground">
-                   {String(i).padStart(2, "۰")}
-                  </p> }
+                  <p className="text-xs tracking-[0.22em] text-muted-foreground">
+                    {String(active + 1).padStart(2, "۰")}
+                </p>
                  <p className="mt-3 text-2xl font-extrabold">
                     {services[active]?.title}
                </p>
@@ -155,7 +155,7 @@ function ServiceShowcase() {
                 </div>
               </div>
             </div> 
-{
+
             <ul className="space-y-4">
               {services.map((s, i) => (
                 <Reveal as="li" key={s.slug} delay={i * 60}>
@@ -166,9 +166,9 @@ function ServiceShowcase() {
                   >
                     <div className="flex items-start justify-between gap-6">
                       <div>
-                        { <span className="text-xs tracking-[0.22em] text-muted-foreground">
-                          {String(i).padStart(2, "۰")}
-                        </span> }
+                        <span className="text-xs tracking-[0.22em] text-muted-foreground">
+                             {String(i + 1).padStart(2, "۰")}
+                      </span>
                         <h3 className="mt-3 text-xl font-extrabold">{s.title}</h3>
                         <p className="mt-3 max-w-md text-sm leading-8 text-muted-foreground">
                           {s.short}
