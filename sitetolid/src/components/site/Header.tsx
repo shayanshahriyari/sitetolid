@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { Logo } from "./Logo";
+import { Logo } from "./assets/logo.png";
 import { ThemeToggle } from "./ThemeToggle";
 import { CtaLink } from "./Button";
 import { services } from "@/lib/site-data";
