@@ -81,28 +81,18 @@ function Hero() {
           </Reveal>
 
        <Reveal delay={760}>
-  <dl
-    className="mt-16 flex w-full justify-between border-t border-[var(--hairline)] pt-8"
-    dir="rtl"
-  >
+  <dl className="mt-16 grid w-full grid-cols-3 border-t border-[var(--hairline)] pt-8">
     {[
       { v: "۱۵۰", l: "پروژه تحویل‌شده" },
       { v: "۵ سال", l: "تجربه سایت تولید" },
       { v: "۹۶٪", l: "تمدید همکاری" },
     ].map((s) => (
-      <div key={s.l} className="shrink-0 text-center">
+      <div key={s.l} className="min-w-0 text-center">
         <dt className="whitespace-nowrap text-2xl font-extrabold text-gradient-brand sm:text-3xl">
           {s.v}
         </dt>
 
-        <dd
-          className="mt-5 whitespace-nowrap text-[9px] leading-6 text-muted-foreground sm:text-xs"
-          style={{
-            whiteSpace: "nowrap",
-            wordBreak: "keep-all",
-            overflowWrap: "normal",
-          }}
-        >
+        <dd className="mt-2 whitespace-nowrap text-[9px] leading-6 text-muted-foreground sm:text-xs">
           {s.l}
         </dd>
       </div>
