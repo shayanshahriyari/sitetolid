@@ -1,8 +1,9 @@
-export function Logo({ className }: { className?: string }) {
+import logo from "@/assets/logo.png";
+{export function Logo({ className }: { className?: string }) {
   return (
     <span className={`inline-flex items-center gap-2.5 ${className ?? ""}`}>
 <img
-  src="/src/assets/logo.png"
+  src={logo}
   alt="Logo"
   width={66}
   height={34}
