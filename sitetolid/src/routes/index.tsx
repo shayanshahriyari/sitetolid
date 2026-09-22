@@ -81,23 +81,25 @@ function Hero() {
           </Reveal>
 
           <Reveal delay={760}>
-      <dl className="mt-16 grid w-full max-w-lg grid-cols-3 gap-6 border-t border-[var(--hairline)] pt-8 sm:gap-12 lg:gap-20">
-    {[
-      { v: "۱۵۰", l: "پروژه تحویل‌شده" },
-      { v: "۵ سال", l: "تجربه سایت تولید" },
-      { v: "۹۶٪", l: "تمدید همکاری" },
-    ].map((s) => (
-      <div key={s.l} className="min-w-0">
-        <dt className="text-2xl font-extrabold text-gradient-brand sm:text-3xl">
-          {s.v}
-        </dt>
+  <div className="w-full overflow-x-auto">
+    <dl className="mt-16 flex min-w-[520px] justify-between border-t border-[var(--hairline)] pt-8">
+      {[
+        { v: "۱۵۰", l: "پروژه تحویل‌شده" },
+        { v: "۵ سال", l: "تجربه سایت تولید" },
+        { v: "۹۶٪", l: "تمدید همکاری" },
+      ].map((s) => (
+        <div key={s.l} className="shrink-0 text-center">
+          <dt className="whitespace-nowrap text-2xl font-extrabold text-gradient-brand sm:text-3xl">
+            {s.v}
+          </dt>
 
-        <dd className="mt-2 text-xs leading-6 text-muted-foreground whitespace-nowrap">
-          {s.l}
-        </dd>
-      </div>
-    ))}
-  </dl>
+          <dd className="mt-2 whitespace-nowrap text-xs leading-6 text-muted-foreground">
+            {s.l}
+          </dd>
+        </div>
+      ))}
+    </dl>
+  </div>
 </Reveal>
         </div>
       </PageShell>
