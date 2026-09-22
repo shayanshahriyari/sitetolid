@@ -81,18 +81,18 @@ function Hero() {
           </Reveal>
 
              <Reveal delay={760}>
-      <dl className="mt-16 grid w-full max-w-lg grid-cols-3 gap-6 border-t border-[var(--hairline)] pt-8 sm:gap-12 lg:gap-20">
+  <dl className="mt-16 grid w-full max-w-lg grid-cols-3 gap-2 border-t border-[var(--hairline)] pt-8 sm:gap-12 lg:gap-20">
     {[
       { v: "۱۵۰", l: "پروژه تحویل‌شده" },
       { v: "۵ سال", l: "تجربه سایت تولید" },
       { v: "۹۶٪", l: "تمدید همکاری" },
     ].map((s) => (
-      <div key={s.l} className="min-w-0">
+      <div key={s.l} className="min-w-0 text-center">
         <dt className="text-2xl font-extrabold text-gradient-brand sm:text-3xl">
           {s.v}
         </dt>
 
-        <dd className="mt-2 text-xs leading-6 text-muted-foreground whitespace-nowrap">
+        <dd className="mt-2 text-[10px] leading-5 text-muted-foreground sm:text-xs sm:leading-6">
           {s.l}
         </dd>
       </div>
