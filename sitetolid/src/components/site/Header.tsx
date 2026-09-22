@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ChevronDown, Menu, X } from "lucide-react";
-sed -i 's|import { Logo } from "./assets/logo.png";|import { Logo } from "./Logo";|' src/components/site/Header.tsx
+import { Logo } from "./Logo";
 import { ThemeToggle } from "./ThemeToggle";
 import { CtaLink } from "./Button";
 import { services } from "@/lib/site-data";
