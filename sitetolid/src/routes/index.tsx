@@ -80,7 +80,7 @@ function Hero() {
             </div>
           </Reveal>
 
-          <Reveal delay={760}>
+          {/* <Reveal delay={760}>
   <dl className="mt-16 flex w-full justify-between border-t border-[var(--hairline)] pt-8">
     {[
       { v: "۱۵۰", l: "پروژه تحویل‌شده" },
@@ -98,7 +98,7 @@ function Hero() {
       </div>
     ))}
   </dl>
-</Reveal>
+</Reveal> */}
         </div>
       </PageShell>
 
