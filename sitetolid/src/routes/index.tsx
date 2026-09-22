@@ -109,7 +109,10 @@ function Hero() {
 /** Cinematic sticky service showcase driven by scroll progress. */
 function ServiceShowcase() {
   const { ref, progress } = useScrollProgress<HTMLDivElement>();
-  const active = Math.min(services.length - 1, Math.floor(progress * services.length));
+  const active = Math.min(
+    services.length - 1,
+    Math.floor(progress * services.length),
+  );
 
   return (
     <section className="mt-32">
@@ -121,7 +124,7 @@ function ServiceShowcase() {
         />
       </PageShell>
 
-       <div ref={ref} className="relative mt-16">
+      <div ref={ref} className="relative mt-16">
         <PageShell>
           <div className="grid gap-10 lg:grid-cols-[1fr_1.05fr]">
             <div className="hidden lg:block">
@@ -141,20 +144,24 @@ function ServiceShowcase() {
                     }}
                   />
                 ))}
+
                 <div className="absolute inset-0 bg-[linear-gradient(to_top,color-mix(in_oklab,var(--background)_88%,transparent),transparent_58%)]" />
+
                 <div className="absolute inset-x-0 bottom-0 p-8">
                   <p className="text-xs tracking-[0.22em] text-muted-foreground">
                     {String(active + 1).padStart(2, "۰")}
-                </p>
-                 <p className="mt-3 text-2xl font-extrabold">
+                  </p>
+
+                  <p className="mt-3 text-2xl font-extrabold">
                     {services[active]?.title}
-               </p>
-               <p className="mt-2 text-sm text-muted-foreground">
-                  {services[active]?.tagline}
-             </p>
+                  </p>
+
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {services[active]?.tagline}
+                  </p>
                 </div>
               </div>
-            </div> 
+            </div>
 
             <ul className="space-y-4">
               {services.map((s, i) => (
@@ -167,13 +174,18 @@ function ServiceShowcase() {
                     <div className="flex items-start justify-between gap-6">
                       <div>
                         <span className="text-xs tracking-[0.22em] text-muted-foreground">
-                             {String(i + 1).padStart(2, "۰")}
-                      </span>
-                        <h3 className="mt-3 text-xl font-extrabold">{s.title}</h3>
+                          {String(i + 1).padStart(2, "۰")}
+                        </span>
+
+                        <h3 className="mt-3 text-xl font-extrabold">
+                          {s.title}
+                        </h3>
+
                         <p className="mt-3 max-w-md text-sm leading-8 text-muted-foreground">
                           {s.short}
                         </p>
                       </div>
+
                       <span className="mt-2 grid h-11 w-11 shrink-0 place-items-center rounded-full hairline bg-background/40 transition-all duration-700 group-hover:bg-brand-gradient group-hover:text-[oklch(0.16_0.02_285)]">
                         <ArrowLeft className="h-4 w-4" strokeWidth={2} />
                       </span>
@@ -182,7 +194,7 @@ function ServiceShowcase() {
                 </Reveal>
               ))}
             </ul>
-          </div> 
+          </div>
         </PageShell>
       </div>
     </section>
