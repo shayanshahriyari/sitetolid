@@ -88,11 +88,11 @@ function Hero() {
       { v: "۹۶٪", l: "تمدید همکاری" },
     ].map((s) => (
       <div key={s.l} className="min-w-0 text-center">
-        <dt className="!whitespace-nowrap !break-normal text-2xl font-extrabold text-gradient-brand sm:text-3xl">
+        <dt className="whitespace-nowrap text-2xl font-extrabold text-gradient-brand sm:text-3xl">
           {s.v}
         </dt>
 
-        <dd className="mt-2 !whitespace-nowrap !break-normal text-[10px] leading-6 text-muted-foreground sm:text-xs">
+        <dd className="mt-2 whitespace-nowrap text-[9px] leading-6 text-muted-foreground sm:text-xs">
           {s.l}
         </dd>
       </div>
