@@ -1,0 +1,73 @@
+import { createFileRoute } from "@tanstack/react-router";
+import nodemailer from "nodemailer";
+
+export const Route = createFileRoute("/api/contact")({
+  server: {
+    handlers: {
+      POST: async ({ request }) => {
+        try {
+          const body = await request.json();
+
+          const {
+            name,
+            phone,
+            email,
+            service,
+            budget,
+            message,
+          } = body;
+
+          if (!name || !phone || !message) {
+            return Response.json(
+              {
+                success: false,
+                message: "لطفاً اطلاعات الزامی را کامل کنید.",
+              },
+              { status: 400 },
+            );
+          }
+
+          const transporter = nodemailer.createTransport({
+            service: "gmail",
+            auth: {
+              user: process.env.MAIL_USER,
+              pass: process.env.MAIL_PASSWORD,
+            },
+          });
+
+          await transporter.sendMail({
+            from: process.env.MAIL_USER,
+            to: "sitetolid@gmail.com",
+            replyTo: email || undefined,
+            subject: `درخواست جدید سایت تولید - ${name}`,
+            text: `
+نام: ${name}
+شماره تماس: ${phone}
+ایمیل: ${email || "وارد نشده"}
+خدمت: ${service || "انتخاب نشده"}
+بودجه: ${budget || "وارد نشده"}
+
+توضیح پروژه:
+${message}
+            `,
+          });
+
+          return Response.json({
+            success: true,
+            message: "درخواست شما ثبت شد.",
+          });
+        } catch (error) {
+          console.error("Contact form error:", error);
+
+          return Response.json(
+            {
+              success: false,
+              message: "ارسال درخواست با خطا مواجه شد.",
+            },
+            { status: 500 },
+          );
+        }
+      },
+    },
+  },
+});

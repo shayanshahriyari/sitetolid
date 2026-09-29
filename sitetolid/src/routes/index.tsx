@@ -80,8 +80,8 @@ function Hero() {
             </div>
           </Reveal>
 
-       <Reveal delay={760}>
-  <dl className="mt-16 grid w-full grid-cols-3 border-t border-[var(--hairline)] pt-8">
+<<<<<<<<Reveal delay={760}>
+  <dl className="mt-16 grid w-full max-w-lg grid-cols-3 gap-6 border-t border-[var(--hairline)] pt-8 sm:gap-12 lg:gap-20">
     {[
       { v: "۱۵۰", l: "پروژه تحویل‌شده" },
       { v: "۵ سال", l: "تجربه سایت تولید" },
@@ -93,6 +93,12 @@ function Hero() {
         </dt>
 
         <dd className="mt-2 whitespace-nowrap text-[9px] leading-6 text-muted-foreground sm:text-xs">
+          {s.l}
+        </dd>
+      </div>
+    ))}
+  </dl>
+</Reveal>
           {s.l}
         </dd>
       </div>

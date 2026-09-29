@@ -39,6 +39,8 @@ const channels = [
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
   return (
     <>
@@ -59,10 +61,50 @@ function ContactPage() {
                 <SectionHeading eyebrow="فرم درخواست" title="شروع گفت‌وگو" />
                 <form
                   className="mt-10 grid gap-5 sm:grid-cols-2"
-                  onSubmit={(e) => {
+                  onSubmit={async (e) => {
                     e.preventDefault();
-                    setSent(true);
+                  
+                    setSending(true);
+                    setSent(false);
+                    setError("");
+                  
+                    const form = e.currentTarget;
+                    const formData = new FormData(form);
+                  
+                    const data = {
+                      name: formData.get("name"),
+                      phone: formData.get("phone"),
+                      email: formData.get("email"),
+                      service: formData.get("service"),
+                      budget: formData.get("budget"),
+                      message: formData.get("message"),
+                    };
+                  
+                    try {
+                      const response = await fetch("/api/contact", {
+                        method: "POST",
+                        headers: {
+                          "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(data),
+                      });
+                  
+                      const result = await response.json();
+                  
+                      if (!response.ok || !result.success) {
+                        throw new Error(result.message || "ارسال درخواست ناموفق بود.");
+                      }
+                  
+                      setSent(true);
+                      form.reset();
+                    } catch (error) {
+                      console.error(error);
+                      setError("ارسال درخواست انجام نشد. لطفاً دوباره تلاش کنید.");
+                    } finally {
+                      setSending(false);
+                    }
                   }}
+                  
                 >
                   <div className="sm:col-span-1">
                     <label htmlFor="c-name" className="mb-2 block text-xs text-muted-foreground">
@@ -153,14 +195,18 @@ function ContactPage() {
                   </div>
 
                   <div className="sm:col-span-2 flex flex-wrap items-center gap-4">
-                    <CtaButton type="submit">
-                      ارسال درخواست
-                      <Send className="h-4 w-4" strokeWidth={2} />
-                    </CtaButton>
+                  <CtaButton type="submit" disabled={sending}>
+                   {sending ? "در حال ارسال..." : "ارسال درخواست"}
+                  <Send className="h-4 w-4" strokeWidth={2} />
+                </CtaButton>
                     <p className="text-xs leading-7 text-muted-foreground">
-                      {sent
-                        ? "پیام شما ثبت شد؛ همکاران ما به‌زودی تماس می‌گیرند."
-                        : "اطلاعات شما محرمانه می‌ماند و فقط برای بررسی پروژه استفاده می‌شود."}
+                    {sending
+                    ? "در حال ارسال درخواست..."
+                    : sent
+                    ? "درخواست شما ثبت شد؛ همکاران ما به‌زودی با شما تماس می‌گیرند."
+                    : error
+                    ? error
+                    : "اطلاعات شما محرمانه می‌ماند و فقط برای بررسی پروژه استفاده می‌شود."}
                     </p>
                   </div>
                 </form>
