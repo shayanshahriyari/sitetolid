@@ -1,22 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?>
+import { createFileRoute } from "@tanstack/react-router";
+import { services, articles } from "@/lib/site-data";
+import { projects } from "@/lib/portfolio";
+
+const BASE_URL = "https://sitetolid.ir";
+
+export const Route = createFileRoute("/sitemap.xml")({
+  server: {
+    handlers: {
+      GET: async () => {
+        const urls = [
+          "/",
+          "/about",
+          "/contact",
+          "/services",
+          "/portfolio",
+          "/articles",
+
+          ...services.map((service) => `/services/${service.slug}`),
+
+          ...projects.map((project) => `/portfolio/${project.slug}`),
+
+          ...articles.map((article) => `/articles/${article.slug}`),
+        ];
+
+        const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls
+  .map(
+    (url) => `  <url>
+    <loc>${BASE_URL}${url}</loc>
+  </url>`,
+  )
+  .join("\n")}
+</urlset>`;
 
-  <url>
-    <loc>https://sitetolid.ir/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://sitetolid.ir/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://sitetolid.ir/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-</urlset>
+        return new Response(xml, {
+          headers: {
+            "Content-Type": "application/xml; charset=utf-8",
+          },
+        });
+      },
+    },
+  },
+});
