@@ -97,6 +97,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/logo.ico", type: "image/x-icon" },
+      {
+  rel: "canonical",
+  href: "https://sitetolid.ir/",
+     },
     ],
   }),
   shellComponent: RootShell,
