@@ -13,7 +13,7 @@ import { articles, projects, services } from "@/lib/site-data";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "سایت تولید | طراحی سایت، سئو و برندینگ سینمایی" },
+      { title: "سایت تولید | طراحی سایت، سئو و برندینگ " },
       {
         name: "description",
         content:
