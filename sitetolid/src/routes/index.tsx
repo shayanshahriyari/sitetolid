@@ -100,14 +100,9 @@ function Hero() {
     ))}
   </dl>
 </Reveal>
-          {s.l}
-        </dd>
-      </div>
-    ))}
-  </dl>
-</Reveal>
-        </div>
-      </PageShell>
+         
+     </div>
+   </PageShell>
 
     </section>
   );
