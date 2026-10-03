@@ -13,18 +13,32 @@ import { articles, projects, services } from "@/lib/site-data";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "سایت تولید | طراحی سایت، سئو و برندینگ " },
-      {
-        name: "description",
-        content:
-          "سایت تولید؛ طراحی سایت اختصاصی، سئو، رابط کاربری، مارکتینگ، بنر و لوگو برای برندهای لوکس.",
-      },
-      { property: "og:title", content: "سایت تولید | سایت تولید" },
-      {
-        property: "og:description",
-        content: "طراحی و رشد برندهای دیجیتال با کیفیت و تمرکز بر فروش.",
-      },
-    ],
+  {
+    title: "سایت تولید | طراحی سایت، سئو و دیجیتال مارکتینگ",
+  },
+  {
+    name: "description",
+    content:
+      "سایت تولید؛ ارائه خدمات طراحی سایت، سئو، دیجیتال مارکتینگ، UI/UX، طراحی بنر و هویت بصری برای کسب‌وکارها.",
+  },
+  {
+    property: "og:title",
+    content: "سایت تولید | طراحی سایت و سئو",
+  },
+  {
+    property: "og:description",
+    content:
+      "سایت تولید در زمینه طراحی سایت، سئو، دیجیتال مارکتینگ و طراحی هویت بصری فعالیت می‌کند.",
+  },
+  {
+    property: "og:type",
+    content: "website",
+  },
+  {
+    property: "og:url",
+    content: "https://sitetolid.ir/",
+  },
+],
   }),
   component: Home,
 });
