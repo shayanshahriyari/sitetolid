@@ -5,8 +5,8 @@ export function Logo({ className }: { className?: string }) {
 <img
   src={logo}
   alt="Logo"
-  width={66}
-  height={34}
+  width={55}
+  height={24}
   aria-hidden="true"
   className="shrink-0 -translate-x-5"
 />
