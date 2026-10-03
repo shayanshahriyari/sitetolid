@@ -5,12 +5,12 @@ export function Logo({ className }: { className?: string }) {
 <img
   src={logo}
   alt="Logo"
-  width={55}
-  height={24}
+  width={40}
+  height={20}
   aria-hidden="true"
-  className="shrink-0 -translate-x-5"
+  className="shrink-0 -translate-x-3"
 />
-      <span className="text-lg font-extrabold tracking-tight">
+      <span className="text-base font-extrabold tracking-tight">
         <span className="text-gradient-brand">سایت تولید</span>
       </span>
     </span>
