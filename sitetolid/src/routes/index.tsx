@@ -39,31 +39,6 @@ export const Route = createFileRoute("/")({
     content: "https://sitetolid.ir/",
   },
 ],
-      scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "Organization",
-              "@id": "https://sitetolid.ir/#organization",
-              name: "سایت تولید",
-              alternateName: "SiteTolid",
-              url: "https://sitetolid.ir/",
-            },
-            {
-              "@type": "WebSite",
-              "@id": "https://sitetolid.ir/#website",
-              name: "سایت تولید",
-              alternateName: "SiteTolid",
-              url: "https://sitetolid.ir/",
-              publisher: {
-                "@id": "https://sitetolid.ir/#organization",
-              },
-              inLanguage: "fa-IR",
-            },
-          ],
         }),
       },
     ],
@@ -124,7 +99,7 @@ function Hero() {
             </div>
           </Reveal>
 
-<<<<<<<<Reveal delay={760}>
+<Reveal delay={760}>
   <dl className="mt-16 grid w-full max-w-lg grid-cols-3 gap-6 border-t border-[var(--hairline)] pt-8 sm:gap-12 lg:gap-20">
     {[
       { v: "۱۵۰", l: "پروژه تحویل‌شده" },
