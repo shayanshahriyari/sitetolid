@@ -66,10 +66,10 @@ function Hero() {
           </Reveal>
 
           <h1 className="mt-8 text-[2.6rem] font-black leading-[1.4] sm:text-6xl lg:text-[4.2rem] lg:leading-[1.35]">
-            <TextReveal text="برند شما لایق" />
+            <TextReveal text="سایت تولید" />
             <br />
             <TextReveal
-              text="تجربه‌ای بی نظیر است"
+              text="طراحی سایت، سئو و رشد دیجیتال"
               wordClassName="text-gradient-brand"
               delay={260}
             />
