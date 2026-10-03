@@ -30,6 +30,8 @@ export const Route = createFileRoute("/")({
   }),
   component: Home,
 });
+
+const texMap = [tex1, tex2, tex3, tex1, tex2, tex3];
 const texMap = [tex1, tex2, tex3, tex1, tex2, tex3];
 
 function Hero() {
