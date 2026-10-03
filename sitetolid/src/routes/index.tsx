@@ -39,6 +39,36 @@ export const Route = createFileRoute("/")({
     content: "https://sitetolid.ir/",
   },
 ],
+      scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://sitetolid.ir/#organization",
+              name: "سایت تولید",
+              alternateName: "SiteTolid",
+              url: "https://sitetolid.ir/",
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://sitetolid.ir/#website",
+              name: "سایت تولید",
+              alternateName: "SiteTolid",
+              url: "https://sitetolid.ir/",
+              publisher: {
+                "@id": "https://sitetolid.ir/#organization",
+              },
+              inLanguage: "fa-IR",
+            },
+          ],
+        }),
+      },
+    ],
+  }),
+})
   }),
   component: Home,
 });
