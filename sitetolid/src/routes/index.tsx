@@ -1,53 +1,35 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, Sparkles } from "lucide-react";
-import heroImg from "@/assets/hero.jpg";
-import tex1 from "@/assets/tex-1.jpg";
-import tex2 from "@/assets/tex-2.jpg";
-import tex3 from "@/assets/tex-3.jpg";
-
-import { CtaLink } from "@/components/site/Button";
-import { Parallax, Reveal, TextReveal, useScrollProgress } from "@/components/site/motion";
-import { CtaBand, Eyebrow, PageShell, SectionHeading } from "@/components/site/Section";
-import { articles, projects, services } from "@/lib/site-data";
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-  {
-    title: "سایت تولید | طراحی سایت، سئو و دیجیتال مارکتینگ",
-  },
-  {
-    name: "description",
-    content:
-      "سایت تولید؛ ارائه خدمات طراحی سایت، سئو، دیجیتال مارکتینگ، UI/UX، طراحی بنر و هویت بصری برای کسب‌وکارها.",
-  },
-  {
-    property: "og:title",
-    content: "سایت تولید | طراحی سایت و سئو",
-  },
-  {
-    property: "og:description",
-    content:
-      "سایت تولید در زمینه طراحی سایت، سئو، دیجیتال مارکتینگ و طراحی هویت بصری فعالیت می‌کند.",
-  },
-  {
-    property: "og:type",
-    content: "website",
-  },
-  {
-    property: "og:url",
-    content: "https://sitetolid.ir/",
-  },
-],
-        }),
+      {
+        title: "سایت تولید | طراحی سایت، سئو و دیجیتال مارکتینگ",
+      },
+      {
+        name: "description",
+        content:
+          "سایت تولید؛ ارائه خدمات طراحی سایت، سئو، دیجیتال مارکتینگ، UI/UX، طراحی بنر و هویت بصری برای کسب‌وکارها.",
+      },
+      {
+        property: "og:title",
+        content: "سایت تولید | طراحی سایت و سئو",
+      },
+      {
+        property: "og:description",
+        content:
+          "سایت تولید در زمینه طراحی سایت، سئو، دیجیتال مارکتینگ و طراحی هویت بصری فعالیت می‌کند.",
+      },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:url",
+        content: "https://sitetolid.ir/",
       },
     ],
   }),
-})
-  }),
   component: Home,
 });
-
 const texMap = [tex1, tex2, tex3, tex1, tex2, tex3];
 
 function Hero() {
