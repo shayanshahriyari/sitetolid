@@ -1,3 +1,13 @@
+import { useState } from "react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowLeft, Sparkles } from "lucide-react";
+import heroImg from "@/assets/hero.jpg";
+
+import { CtaLink } from "@/components/site/Button";
+import { Parallax, Reveal, TextReveal, useScrollProgress } from "@/components/site/motion";
+import { CtaBand, Eyebrow, PageShell, SectionHeading } from "@/components/site/Section";
+import { articles, projects, services } from "@/lib/site-data";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -31,8 +41,15 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const texMap = [tex1, tex2, tex3, tex1, tex2, tex3];
-const texMap = [tex1, tex2, tex3, tex1, tex2, tex3];
+/** One image per service, matched by slug so each field shows its own picture. */
+const serviceImages: Record<string, string> = {
+  "web-design": "https://assets.lummi.ai/assets/QmTbsUakikPGJF68NXSgm8YxvD64fjGL8rA1JVK8k7xihm?auto=format&w=1500&h=1500",
+  seo: "https://assets.lummi.ai/assets/QmZeddLD5eftx26ec6MV8juGR7j7BvMSKsaEUCQscRzyy3?auto=format&w=1500&h=1500",
+  "ui-ux": "https://assets.lummi.ai/assets/QmPd8YM5rxX4xQ8nfyhTCN3q3o4R1wTmhGXMStfcwrjJsN?auto=format&w=1500&h=1500",
+  "digital-marketing": "https://assets.lummi.ai/assets/Qmf6C1geiTSm6zUnbkZnTNaFQrcATd7XVbddhna4t5mUsQ?auto=format&w=1500&h=1500",
+  "banner-design": "https://assets.lummi.ai/assets/QmWeTnmVsQ9xFXcWfXpGVTrXu44AU37dUchFstop4sN88N?auto=format&w=1500&h=1500",
+  branding: "https://assets.lummi.ai/assets/QmUGCKpHr2RMyV8mBucoNyXZ1pCf8MxQq2wu1CyVJMNJcW?auto=format&w=1500&h=1500",
+};
 
 function Hero() {
   return (
@@ -113,10 +130,12 @@ function Hero() {
 /** Cinematic sticky service showcase driven by scroll progress. */
 function ServiceShowcase() {
   const { ref, progress } = useScrollProgress<HTMLDivElement>();
-  const active = Math.min(
+  const scrollActive = Math.min(
     services.length - 1,
     Math.floor(progress * services.length),
   );
+  const [hovered, setHovered] = useState<number | null>(null);
+  const active = hovered ?? scrollActive;
 
   return (
     <section className="mt-32">
@@ -136,7 +155,7 @@ function ServiceShowcase() {
                 {services.map((s, i) => (
                   <img
                     key={s.slug}
-                    src={texMap[i]}
+                    src={serviceImages[s.slug]}
                     alt={s.title}
                     loading="lazy"
                     width={1200}
@@ -173,6 +192,10 @@ function ServiceShowcase() {
                   <Link
                     to="/services/$slug"
                     params={{ slug: s.slug }}
+                    onMouseEnter={() => setHovered(i)}
+                    onMouseLeave={() => setHovered(null)}
+                    onFocus={() => setHovered(i)}
+                    onBlur={() => setHovered(null)}
                     className="group block overflow-hidden rounded-[1.75rem] hairline bg-surface/40 p-7 backdrop-blur-xl transition-all duration-700 [transition-timing-function:var(--ease-cinema)] hover:-translate-y-1 hover:bg-surface/70 hover:glow-green"
                   >
                     <div className="flex items-start justify-between gap-6">
