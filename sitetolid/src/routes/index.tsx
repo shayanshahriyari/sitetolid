@@ -357,7 +357,6 @@ function Home() {
   return (
     <>
       <Hero />
-      <ServiceShowcase />
       <Journey />
       <WorkPreview />
       <Testimonial />
