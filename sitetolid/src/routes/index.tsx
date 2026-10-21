@@ -41,15 +41,6 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-/** One image per service, matched by slug so each field shows its own picture. */
-// const serviceImages: Record<string, string> = {
-//   "web-design": "https://assets.lummi.ai/assets/QmQrayJCSkDC5cYqMkgMifmr4BCfSEKH3xyR8S9VweXK1B?auto=format&w=1500&h=1500",
-//   seo: "https://assets.lummi.ai/assets/QmReQLLkK4SHWqU4p4iE5ErqHHfKWo1gTL9ryeBuTfxcEL?auto=format&w=1500&h=1500",
-//   "ui-ux": "https://assets.lummi.ai/assets/QmfGypC1JWHX92C7NeS49eu13j9h2yjHnEZwFqAyJ1CmKv?auto=format&w=1500&h=1500",
-//   "digital-marketing": "https://assets.lummi.ai/assets/QmeE41YbYdth3SnpfQftuJNy7LjnHsDB1zo9f81E9EsMmg?auto=format&w=1500&h=1500",
-//   "banner-design": "https://assets.lummi.ai/assets/QmPVdD9uw9WbYQBvxtdHANBBgzTC4rvZ6Q5xLBLUbTyihM?auto=format&w=1500&h=1500",
-//   branding: "https://assets.lummi.ai/assets/QmauG9jWXHWQwsT67RECxcGubA1rV23ZrZ1AJX5zKPduN7?auto=format&w=1500&h=1500",
-// };
 
 function Hero() {
   return (
