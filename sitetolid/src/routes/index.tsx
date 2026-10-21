@@ -43,12 +43,12 @@ export const Route = createFileRoute("/")({
 
 /** One image per service, matched by slug so each field shows its own picture. */
 const serviceImages: Record<string, string> = {
-  "web-design": "https://assets.lummi.ai/assets/QmTbsUakikPGJF68NXSgm8YxvD64fjGL8rA1JVK8k7xihm?auto=format&w=1500&h=1500",
-  seo: "https://assets.lummi.ai/assets/QmZeddLD5eftx26ec6MV8juGR7j7BvMSKsaEUCQscRzyy3?auto=format&w=1500&h=1500",
-  "ui-ux": "https://assets.lummi.ai/assets/QmPd8YM5rxX4xQ8nfyhTCN3q3o4R1wTmhGXMStfcwrjJsN?auto=format&w=1500&h=1500",
-  "digital-marketing": "https://assets.lummi.ai/assets/Qmf6C1geiTSm6zUnbkZnTNaFQrcATd7XVbddhna4t5mUsQ?auto=format&w=1500&h=1500",
-  "banner-design": "https://assets.lummi.ai/assets/QmWeTnmVsQ9xFXcWfXpGVTrXu44AU37dUchFstop4sN88N?auto=format&w=1500&h=1500",
-  branding: "https://assets.lummi.ai/assets/QmUGCKpHr2RMyV8mBucoNyXZ1pCf8MxQq2wu1CyVJMNJcW?auto=format&w=1500&h=1500",
+  "web-design": "https://assets.lummi.ai/assets/QmQrayJCSkDC5cYqMkgMifmr4BCfSEKH3xyR8S9VweXK1B?auto=format&w=1500&h=1500",
+  seo: "https://assets.lummi.ai/assets/QmReQLLkK4SHWqU4p4iE5ErqHHfKWo1gTL9ryeBuTfxcEL?auto=format&w=1500&h=1500",
+  "ui-ux": "https://assets.lummi.ai/assets/QmfGypC1JWHX92C7NeS49eu13j9h2yjHnEZwFqAyJ1CmKv?auto=format&w=1500&h=1500",
+  "digital-marketing": "https://assets.lummi.ai/assets/QmeE41YbYdth3SnpfQftuJNy7LjnHsDB1zo9f81E9EsMmg?auto=format&w=1500&h=1500",
+  "banner-design": "https://assets.lummi.ai/assets/QmPVdD9uw9WbYQBvxtdHANBBgzTC4rvZ6Q5xLBLUbTyihM?auto=format&w=1500&h=1500",
+  branding: "https://assets.lummi.ai/assets/QmauG9jWXHWQwsT67RECxcGubA1rV23ZrZ1AJX5zKPduN7?auto=format&w=1500&h=1500",
 };
 
 function Hero() {
